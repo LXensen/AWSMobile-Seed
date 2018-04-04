@@ -1,0 +1,16 @@
+<form (submit)="confirm()" class="form-signin">
+  <h1 class="h3 mb-3 font-weight-normal">Confirm Registration</h1>
+<label for="code" class="sr-only" >Confirmation Code</label>
+<input type="text" [(ngModel)]="code" placeholder="Confirmation Code" name="code" class="form-control" />
+<br />
+<label for="username" class="sr-only" >User Name</label>
+<input type="text" [(ngModel)]="username" placeholder="User Name" name="username" class="form-control" />
+
+<br />
+<button type="button" class="btn btn-sm btn-primary btn-block" (click)="confirm();">Confirm</button>  
+
+<div padding>
+  <p>Haven't received the confirmation code email yet? <a (click)="resendCode()">Resend</a></p>
+</div>
+</form>
+
