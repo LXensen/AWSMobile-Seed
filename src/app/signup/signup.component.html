@@ -1,20 +1,33 @@
-<form (submit)="signup()" class="form-signin">
-  <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Create an Account</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" [(ngModel)]="logindeails.password" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" [(ngModel)]="logindeails.password" id="inputPassword" class="form-control" placeholder="Password" required>
-  
-  <div class="row"><br /></div>    
-
-  <div class="alert alert-danger" role="alert" *ngIf="validationMessage" >
-        {{validationMessage}}
-  </div>
-
-  <button class="btn btn-sm btn-primary btn-block">Register</button>
-  
-  <div>
-      <a routerLink="/signin">Back to login</a>
+<div style="text-align: center">
+  <form (submit)="signup()" class="form-signin">
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Create an Account</h1>
+    <div class="row">
+      <label for="username" class="sr-only" >Username</label>
+      <input type="text" class="form-control" [(ngModel)]="userDetails.username" placeholder="Username" name="username" />
   </div>  
-</form>
+  
+  
+  <div class="row">
+      <label for="email" class="sr-only">Email</label>
+      <input type="email"  class="form-control"[(ngModel)]="userDetails.email" placeholder="Email" name="email" />
+  </div>
+  
+  
+  <div class="row">
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="userDetails.password" placeholder="Password" name="password" />
+  </div>  
+    <div class="row"><br /></div>    
+  
+    <div class="alert alert-danger" role="alert" *ngIf="validationMessage" >
+          {{validationMessage}}
+    </div>
+  
+    <button class="btn btn-sm btn-primary btn-block">Register</button>
+    
+    <div>
+        <a routerLink="/signin">Back to login</a>
+    </div>  
+  </form>
+  </div>

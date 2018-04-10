@@ -2,7 +2,7 @@ import { AccountService } from './../services/account.service';
 import { Component, OnInit } from '@angular/core';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
-export class LoginDetails {
+export class UserDetails {
   username: string;
   email: string;
   password: string;
@@ -16,12 +16,12 @@ export class LoginDetails {
 export class SignupComponent implements OnInit {
 
   public validationMessage: string;
-  public logindeails: LoginDetails
+  public userDetails: UserDetails
 
   constructor(private accSVC: AccountService,
               private spinSVC: Ng4LoadingSpinnerService) {
 
-              this.logindeails = new LoginDetails();
+              this.userDetails = new UserDetails();
 
               this.validationMessage = null;
                }
@@ -30,10 +30,11 @@ export class SignupComponent implements OnInit {
   }
 
   signup(){
+    //let details = this.logindeails;
     this.validationMessage = null;
     this.spinSVC.show();
 
-    this.accSVC.signup(this.logindeails.username, this.logindeails.password, this.logindeails.email)
+    this.accSVC.signup(this.userDetails.username, this.userDetails.password, this.userDetails.email)
       .then(data => {
 
         this.spinSVC.hide();
