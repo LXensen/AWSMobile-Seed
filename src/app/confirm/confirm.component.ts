@@ -11,20 +11,25 @@ const logger = new Logger('ConfirmSignUp');
   styleUrls: ['./confirm.component.css']
 })
 export class ConfirmComponent implements OnInit {
-
   public code: string;
   public username: string;
+  public logInConfirmed: boolean;
 
   constructor(private router: Router,
-              private acctSVC: AccountService) { }
+              private acctSVC: AccountService) {
+                this.logInConfirmed = false;
+               }
 
   ngOnInit() {
   }
 
   confirm() {
+    this.logInConfirmed = false;
+    
     this.acctSVC.confirm(this.username, this.code)
       .then(data => {
 
+        this.logInConfirmed = true;
       })
       .catch(err => {
 
