@@ -1,6 +1,6 @@
 import { AWSSeedPage } from './app.po';
 
-describe('aws-seed App', () => {
+describe('XAccountPOC App', () => {
   let page: AWSSeedPage;
 
   beforeEach(() => {

@@ -1,5 +1,5 @@
 {
-  "name": "aws-seed",
+  "name": "XAccountPOC",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -25,6 +25,7 @@
     "@angular/platform-browser-dynamic": "5.2.7",
     "@angular/router": "5.2.7",
     "@ng-bootstrap/ng-bootstrap": "^1.0.4",
+    "aws-amplify": "^0.4.7",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "ng4-loading-spinner": "^1.1.3",
